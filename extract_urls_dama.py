@@ -7,6 +7,6 @@ for url in range(102):
     soup = BeautifulSoup(response.content, "html.parser")
     page_urls = soup.find_all(name="a", class_="product-name")
     for product in page_urls:
-        with open("products.csv", "a") as data_file:
+        with open("sarmayesh_products.csv", "a") as data_file:
             data_file.write(f"{product.get('href')}\n")
     print(f"page {url} completed")

@@ -14,13 +14,17 @@ for url in urls[product_id::]:
     response = requests.get(url=url)
     soup = BeautifulSoup(response.content, "html.parser")
 
-    title = soup.find(name="h1").getText()  # ************ CREATE TITLE **************
+    # ************ CREATE TITLE **************
+    title = soup.find(name="h1").getText()
 
-    category = get_category(soup)  # ************ CREATE category *****************
+    # ************ CREATE category *****************
+    category = get_category(soup)
 
-    guaranty_title, guaranty_text = get_guaranty(soup)  # *********** CREATE GUARANTY *************
+    # *********** CREATE GUARANTY *************
+    guaranty_title, guaranty_text = get_guaranty(soup)
 
-    short_desc = get_short_desc(soup)  # ************* CREATE SHORT_DESC ****************
+    # ************* CREATE SHORT_DESC ****************
+    short_desc = get_short_desc(soup)
 
     price = get_price(soup)  # ************* CREATE price *****************
 
